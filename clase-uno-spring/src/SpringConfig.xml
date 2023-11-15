@@ -1,0 +1,68 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <!-- el código comentado entre las líneas 31 y 46 vienen aquí -->
+   <!-- Ejemplo 7 
+   		creación de objetos por que tienen métodos constructores. 
+   		Los objetos se pueden crear por 2 métodos:
+   		1. definimos el contenido de una var que definimos (línea  17)
+   		2. pasamos un valor posicional al métidos constructor. (línea 22)
+    -->
+   <!-- Aquí definimos un bean/instanciar un objeto de clase: org.itnow.cursoSpring.claseUno.services.ClienteService -->
+   <bean id="clienteService" class="org.itnow.cursoSpring.claseUno.services.ClienteService">
+   		<property name="repository" ref="clienteRepository"/>
+   </bean>
+	
+   <!-- Aquí definimos un bean/instanciar un objeto de clase: org.itnow.cursoSpring.claseUno.repository.ClienteDatabaseRepository -->
+   <bean id="clienteRepository" class="org.itnow.cursoSpring.claseUno.repository.ClienteDatabaseRepository">
+   		<constructor-arg ref="logger"/>
+   		<!-- el código entre las líneas 48 y 49 viene aquí. -->
+   </bean>
+   <!-- Aquí definimos un bean/instanciar un objeto de clase: org.itnow.cursoSpring.claseUno.controllers.ClienteController -->
+   <bean id="clienteController" class="org.itnow.cursoSpring.claseUno.controllers.ClienteController">
+   		<property name="service" ref="clienteService"/>
+   </bean>
+   <!-- Aquí definimos un bean/instanciar un objeto de clase: org.itnow.cursoSpring.claseUno.utils.ConsoleLogger -->
+   <bean id="logger" class="org.itnow.cursoSpring.claseUno.utils.ConsoleLogger">
+   </bean>
+		<!-- el código entre las lineas 51 y 63 viene aquí -->
+ 
+</beans>
+
+   <!-- 
+   <bean id="demoBean" class="org.itnow.cursSpring.claseUno.models.DemoBean">
+   	<property name="texto" value="Hola Mundo Spring (Mi primer Bean)"></property>
+   </bean>
+   -->
+   <!-- Ejemplo 6 - inyección por constructor -->
+   <!-- <bean id="clienteRepository" class="org.itnow.cursoSpring.repository.ClienteDatabaseRepository"> 
+   </bean >  -->
+   <!-- 
+   <bean id="clienteRepository" class="org.itnow.cursoSpring.repository.ClienteMocRepository">
+   </bean >
+   
+   <bean id="clienteService" class="org.itnow.cursoSpring.services.ClienteService">
+   	<constructor-arg ref="clienteRepository"></constructor-arg>
+   </bean>
+   -->
+
+  <!--  		<property name="driver" value="jdbc:sqlite:clientes.db"></property>  -->
+  <!--   		<constructor-arg value="jdbc:sqlite:clientes.db"/>  -->
+   
+  <!--  		<property name="clientes">
+   			<list>
+   				<bean class="org.itnow.cursoSpring.claseUno.models.Cliente">
+   					<constructor-arg value="1"/>
+   					<constructor-arg value="Manuel"/>
+   				</bean>
+   				<bean class="org.itnow.cursoSpring.claseUno.models.Cliente">
+   					<constructor-arg value="2"></constructor-arg>
+   					<constructor-arg value="Javier"></constructor-arg>
+   				</bean>
+   			</list>
+   		</property>
+  -->

@@ -1,0 +1,10 @@
+server:
+  port: 3000
+spring:
+  profiles:
+    active: Produccion
+  datasource:
+    url: jdbc:sqlite:automoviles.db
+  jpa:
+    hibernate:
+      ddl-auto: update
