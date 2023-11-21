@@ -38,4 +38,3 @@ Las dependencias de los objetos son inversos a la abstracción: los más abstrac
 - modelos, esta capa usada por la anterior para obtener los setter y getters del modelo para sobreescribir los métodos indidcados y establecer las acciones a desarrollar por cada servicio de persistencia de datos:
     - base de datos no relacional: mongodb
     - base de datos relacional: mysql
- 
