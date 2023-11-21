@@ -20,7 +20,8 @@ Estas clases son:
   - lombok
   - bootstrap
 
-##Patrones de diseño.
+## Patrones de diseño.
+
 Las dependencias de los objetos son inversos a la abstracción: los más abstractos son los modelos y los menos los controladores. La secuencia es:
 - controladores
 - services
