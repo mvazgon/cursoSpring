@@ -1,7 +1,6 @@
 package org.itnow.cursoSpring.clasecuatro.repository;
 
 import java.util.List;
-
 import org.itnow.cursoSpring.clasecuatro.models.*;
 
 public interface AutomovilRepository {
